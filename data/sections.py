@@ -1,4 +1,7 @@
-xpaths = [
+vault = {
+    'medline_plus':{
+        'BASE_URL': 'https://medlineplus.gov/diabetes.html',
+        'xpaths':[
         '//*[@id="more_encyclopedia"]', # encyclopedia
         '//*[@id="related-topics"]', # related topics
         '//*[@id="section77"]', # Living With
@@ -7,4 +10,9 @@ xpaths = [
         '//*[@id="section78"]', # treatment & therapies
         '//*[@id="section82"]', # reference desk
         '//*[@id="section69"]' # patient handouts
-    ]
+        ]
+    }   
+    
+}
+
+keywords = ['sick', 'symptoms', 'manage', 'health']
