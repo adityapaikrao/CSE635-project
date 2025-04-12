@@ -2,7 +2,7 @@ import json
 import os
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, PointStruct
-import numpy as np
+import argparse
 
 def connect_to_qdrant():
     return QdrantClient(host="localhost", port=6333)
@@ -59,11 +59,15 @@ def process_batch_files(client, collection_name, batch_files):
         upload_embeddings(client, collection_name, documents)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rewrite", type=str, required=True, help="yes/no: resets db if yes")
+    args = parser.parse_args()
+
     client = connect_to_qdrant()
     collection_name = "document_embeddings"
 
     # Set to True ONLY if you want to delete and recreate collection
-    recreate = True
+    recreate = args.rewrite.strip() == "yes"
 
     if recreate:
         recreate_collection(client, collection_name)
