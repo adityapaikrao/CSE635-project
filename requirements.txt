@@ -1,0 +1,6 @@
+requests-html
+lxml-html-clean
+trafilatura
+qdrant-client
+sentence-transformers
+spacy
