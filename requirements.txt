@@ -1,6 +1,34 @@
+# Core dependencies for scraping and parsing
 requests-html
 lxml-html-clean
 trafilatura
+spacy
+
+# Vector store and chunking
 qdrant-client
 sentence-transformers
-spacy
+scikit-learn
+numpy
+uuid
+
+# Deep learning core
+torch
+transformers
+datasets
+accelerate
+peft
+evaluate
+bitsandbytes
+
+# Optional vector DB integration
+faiss-cpu  # Use faiss-gpu if using GPU-based search
+# faiss-gpu
+
+# Language support
+langdetect
+googletrans==4.0.0-rc1
+# or transformers MarianMT for translation (already included)
+
+# Misc
+tqdm
+python-dotenv  # optional if using env config
