@@ -1,27 +1,34 @@
 #!/bin/bash
 
-# CONFIGURABLE
-TOTAL_STEPS=100     # Set this high; script will exit early if no more docs
-BATCH_SIZE=10       # Number of documents per batch
-SCRIPT_PATH="main.py"  # Path to your Python script
+echo "Starting batch processing..."
 
-for (( STEP=0; STEP<$TOTAL_STEPS; STEP++ ))
-do
-    echo "Running batch step: $STEP"
+# Directory for output files (relative to project root)
+OUTPUT_DIR="../embeddings"
 
-    # Capture output
-    OUTPUT=$(python "$SCRIPT_PATH" --step=$STEP --batch_size=$BATCH_SIZE)
+# Clean up existing chunked embedding files in root directory
+echo "Cleaning up existing chunked embedding files in root directory..."
+rm -f ../chunked_embeddings_*.json
 
-    echo "$OUTPUT"
+# Create output directory if it doesn't exist
+mkdir -p $(dirname $(dirname $0))/$OUTPUT_DIR
 
-    # Check for termination signal
-    if echo "$OUTPUT" | grep -q "No more documents to process"; then
+# Run batches sequentially
+step=0
+while true; do
+    echo "Running batch step: $step"
+    
+    # Run the Python script for this batch
+    python ./vectordb/main.py --step=$step --output_dir=$OUTPUT_DIR
+    
+    # Check exit code
+    exit_code=$?
+    if [ $exit_code -ne 0 ]; then
         echo "No more batches left. Exiting."
         break
     fi
-
-    # Optional short pause
-    # sleep 1
+    
+    # Increment step
+    ((step++))
 done
 
 echo "Batch processing complete."

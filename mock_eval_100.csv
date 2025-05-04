@@ -1,0 +1,101 @@
+id,question,reference_answer,language,generated,latency
+Q1,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,0.435
+Q2,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,0.595
+Q3,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. ,0.522
+Q4,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,1.107
+Q5,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. This condition is serious.,1.402
+Q6,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.789
+Q7,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. This condition is serious.,1.377
+Q8,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,0.53
+Q9,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.245
+Q10,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. This condition is serious.,0.575
+Q11,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. ,1.64
+Q12,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,1.326
+Q13,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. This condition is serious.,1.613
+Q14,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,0.918
+Q15,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured. See your doctor.,1.383
+Q16,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,1.148
+Q17,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable.,0.931
+Q18,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.707
+Q19,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,0.721
+Q20,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,0.962
+Q21,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,1.627
+Q22,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. ,1.639
+Q23,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin.,1.443
+Q24,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. ,1.657
+Q25,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,1.091
+Q26,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. ,1.278
+Q27,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable.,0.934
+Q28,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin is a hormone that regulates blood sugar.,1.605
+Q29,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. See your doctor.,1.354
+Q30,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured. See your doctor.,0.556
+Q31,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.761
+Q32,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,1.619
+Q33,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin is a hormone that regulates blood sugar.,1.253
+Q34,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin.,1.155
+Q35,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,1.239
+Q36,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,0.735
+Q37,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin is a hormone that regulates blood sugar.,1.726
+Q38,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable.,1.542
+Q39,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin.,0.58
+Q40,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.139
+Q41,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,1.457
+Q42,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. See your doctor.,1.793
+Q43,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes can be prevented.,0.569
+Q44,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,0.429
+Q45,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. ,0.499
+Q46,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,0.499
+Q47,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes can be prevented.,0.7
+Q48,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin is a hormone that regulates blood sugar.,1.207
+Q49,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes can be prevented.,1.53
+Q50,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. See your doctor.,1.323
+Q51,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,1.343
+Q52,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,1.521
+Q53,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. This condition is serious.,0.666
+Q54,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. See your doctor.,0.75
+Q55,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,0.471
+Q56,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,1.697
+Q57,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. This condition is serious.,0.699
+Q58,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,1.779
+Q59,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable.,0.799
+Q60,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. ,1.327
+Q61,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,1.211
+Q62,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,0.47
+Q63,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. ,0.62
+Q64,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. ,1.233
+Q65,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.745
+Q66,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. This condition is serious.,1.32
+Q67,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. ,1.338
+Q68,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.04
+Q69,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,1.042
+Q70,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,1.153
+Q71,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. See your doctor.,1.631
+Q72,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.256
+Q73,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,1.335
+Q74,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,1.715
+Q75,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,1.646
+Q76,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.695
+Q77,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,1.108
+Q78,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. ,0.529
+Q79,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured. See your doctor.,1.48
+Q80,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. ,1.172
+Q81,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin.,1.164
+Q82,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,1.002
+Q83,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.659
+Q84,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes is not curable.,0.694
+Q85,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,0.895
+Q86,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. ,1.449
+Q87,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,1.634
+Q88,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,1.495
+Q89,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. ,0.774
+Q90,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable. This condition is serious.,0.711
+Q91,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. This condition is serious.,0.712
+Q92,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a chronic condition.,1.754
+Q93,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.96
+Q94,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease. This condition is serious.,0.561
+Q95,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,0.552
+Q96,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured. See your doctor.,1.011
+Q97,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin. See your doctor.,0.757
+Q98,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,Insulin resistance causes high blood sugar.,0.91
+Q99,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured. This condition is serious.,1.272
+Q100,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels. This condition is serious.,0.833

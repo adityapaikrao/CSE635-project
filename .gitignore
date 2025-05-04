@@ -1,2 +1,13 @@
 data/LLM-CGM/
 data/MedQuAD/
+# models, checkpoints, datasets, logs
+*.pt
+*.ckpt
+*.bin
+*.h5
+data/
+models/
+logs/
+*.ipynb_checkpoints/
+*.zip
+*.tar.gz

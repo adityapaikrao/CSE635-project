@@ -1,0 +1,37 @@
+
+📊 Evaluation Metrics (2025-05-04 05:55:56):
+BLEU: 1.0000
+ROUGE-L: 1.0000
+BERTScore (F1): 1.0000
+Exact Match Accuracy: 1.0000
+
+📊 Evaluation Metrics (2025-05-04 06:01:44):
+BLEU: 1.0000
+ROUGE-L: 1.0000
+BERTScore (F1): 1.0000
+Exact Match Accuracy: 1.0000
+
+📊 Evaluation Metrics (2025-05-04 06:03:41):
+BLEU: 0.0000
+ROUGE-L: 0.4425
+BERTScore (F1): 0.9508
+Exact Match Accuracy: 0.0000
+
+📊 Evaluation Metrics (2025-05-04 06:05:24):
+BLEU: 0.0000
+ROUGE-L: 0.4425
+BERTScore (F1): 0.9508
+Exact Match Accuracy: 0.0000
+
+📊 Evaluation Metrics (2025-05-04 06:07:33):
+BLEU: 0.1255
+ROUGE-L: 0.4425
+BERTScore (F1): 0.9508
+Exact Match Accuracy: 0.0000
+
+📊 Evaluation Metrics (2025-05-04 06:17:18):
+BLEU: 0.3359
+ROUGE-L: 0.5724
+BERTScore (F1): 0.9598
+Exact Match Accuracy: 0.2700
+SBERT Cosine Similarity: 0.8743

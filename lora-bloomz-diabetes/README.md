@@ -1,5 +1,5 @@
 ---
-base_model: bigscience/bloomz-560m
+base_model: bigscience/bloomz-1b7
 library_name: peft
 ---
 
@@ -199,4 +199,4 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 [More Information Needed]
 ### Framework versions
 
-- PEFT 0.15.1
+- PEFT 0.15.2

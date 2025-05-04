@@ -1,0 +1,6 @@
+id,question,reference_answer,language,generated,latency
+1,What is diabetes?,Diabetes is a chronic condition.,en,Diabetes is a long-term disease.,0.12
+2,What causes high blood sugar?,Insulin resistance causes high blood sugar.,en,High sugar levels are caused by low insulin.,0.23
+3,Is Type 1 diabetes curable?,Type 1 diabetes is not curable.,en,Type 1 diabetes cannot be cured.,0.15
+4,Can diabetes be prevented?,Type 2 diabetes can be prevented.,en,Type 2 diabetes is preventable.,0.20
+5,What is insulin?,Insulin is a hormone that regulates blood sugar.,en,Insulin helps control glucose levels.,0.18

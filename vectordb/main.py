@@ -6,7 +6,10 @@ from itertools import islice
 import gc
 import argparse
 
-def save_checkpoint(documents, step, out_dir=".."):
+def save_checkpoint(documents, step, out_dir="../embeddings"):
+    # Ensure the output directory exists
+    os.makedirs(os.path.join(os.path.dirname(__file__), out_dir), exist_ok=True)
+    
     output_path = os.path.join(os.path.dirname(__file__), out_dir, f"chunked_embeddings_{step}.json")
     with open(output_path, "w") as f:
         json.dump(documents, f, indent=2)
@@ -16,9 +19,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--step", type=int, required=True, help="Batch index to process")
     parser.add_argument("--batch_size", type=int, default=10, help="Number of docs per batch")
+    parser.add_argument("--output_dir", type=str, default="../embeddings", help="Directory to save output files")
     args = parser.parse_args()
 
-    json_file_path = os.path.join(os.path.dirname(__file__), "..", "scraped_text.json")
+    # Path to the JSON file in the data directory
+    json_file_path = os.path.join(os.path.dirname(__file__), "..", "data", "scraped_text.json")
 
     with open(json_file_path, 'r') as f:
         data = json.load(f)
@@ -33,7 +38,7 @@ if __name__ == "__main__":
 
     if not documents_list:
         print("No more documents to process in this batch.")
-        exit()
+        exit(1)  # Exit with non-zero code to indicate no more documents
 
     processed_docs = []
     for idx, doc in enumerate(tqdm(documents_list, desc=f"Processing batch {args.step}")):
@@ -41,9 +46,11 @@ if __name__ == "__main__":
         doc['chunked_embeddings'] = loader.get_embeddings(doc['chunked_sentences'])
         processed_docs.append(doc)
 
-    save_checkpoint(processed_docs, step=args.step)
+    save_checkpoint(processed_docs, step=args.step, out_dir=args.output_dir)
 
     # Optional cleanup
     del processed_docs
     del documents_list
     gc.collect()
+    
+    exit(0)  # Exit with code 0 to indicate success
