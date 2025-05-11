@@ -86,7 +86,7 @@ class SimpleVectorDB:
     def load(cls, directory, embedding_function):
         """Load a database from a directory."""
         # Load embeddings
-        embeddings_path = os.path.join(directory, "embeddings.npy")
+        embeddings_path = os.path.join(directory, "./embeddings.npy")
         embeddings = np.load(embeddings_path)
         
         # Load texts

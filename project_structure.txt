@@ -1,0 +1,446 @@
+├── .gitattributes
+├── .gitignore
+├── =0.20.0
+├── =4.39
+├── =4.39.0
+├── .git/
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── config
+│   ├── branches/
+│   ├── hooks/
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-checkout
+│   │   ├── post-commit
+│   ├── info/
+│   │   ├── exclude
+│   │   ├── refs
+│   ├── lfs/
+│   │   ├── cache/
+│   │   │   ├── locks/
+│   │   │   │   ├── refs/
+│   │   │   │   │   ├── heads/
+│   │   │   │   │   │   ├── main/
+│   │   │   │   │   │   │   ├── verifiable
+│   │   ├── logs/
+│   │   │   ├── 20250504T081400.251745001.log
+│   │   │   ├── 20250504T081409.878017556.log
+│   │   │   ├── 20250504T081409.88033054.log
+│   │   │   ├── 20250504T081409.880857071.log
+│   │   ├── objects/
+│   │   │   ├── 7a/
+│   │   │   │   ├── 5f/
+│   │   │   │   │   ├── 7a5f5f1ba36bca7e6e045e5d4c2dc1f059790980cbf8600dfb58493522d6784a
+│   │   ├── tmp/
+│   ├── logs/
+│   │   ├── HEAD
+│   │   ├── refs/
+│   │   │   ├── heads/
+│   │   │   │   ├── main
+│   │   │   ├── remotes/
+│   │   │   │   ├── origin/
+│   │   │   │   │   ├── main
+│   ├── objects/
+│   │   ├── 00/
+│   │   │   ├── 081aaada8df22c7c6580376c9819510b8b46e3
+│   │   ├── 02/
+│   │   │   ├── d8c1af23996b96f96f87c46ca2b90783b6aff9
+│   │   ├── 03/
+│   │   │   ├── 57cdcbd1fca90c5a13d594aba001152c397d38
+│   │   ├── 05/
+│   │   │   ├── 68e07deb3159125748939a4093a3be69c1ba45
+│   │   ├── 06/
+│   │   │   ├── 9cfb8aab4562b95c3b7d3c54e2e334ebf01030
+│   │   ├── 0b/
+│   │   │   ├── 06c9139fd1cede5d548fce8f5fa69cbcfffb7b
+│   │   ├── 11/
+│   │   │   ├── 3cf5dabbd7ed21a05e69321a112c4893a6aae6
+│   │   ├── 12/
+│   │   │   ├── 1d92ca13ee82e08481139cbb3e6c5f69cd322d
+│   │   ├── 2b/
+│   │   │   ├── e8974d505008b464e1881a0b50b6cac13e1b8b
+│   │   ├── 2c/
+│   │   │   ├── d85563e75b9839e52a4debfdea3ab3687c85f8
+│   │   ├── 2d/
+│   │   │   ├── 4731ea9b41d93c1eb6550b79c646c2da0a4e97
+│   │   ├── 2f/
+│   │   │   ├── 1d830416c3980f33da73aa34ecfbaa89f22b87
+│   │   │   ├── f785bb6b35a142570eb1ec1948f7ca8f1e396a
+│   │   ├── 37/
+│   │   │   ├── a4c06c13645064109284916781f7d048ebf4f6
+│   │   ├── 41/
+│   │   │   ├── 6d6297ec888989540671b89c333fdf7692d5c8
+│   │   ├── 43/
+│   │   │   ├── b72612e8072c163395f515556d13b3a00c4643
+│   │   ├── 47/
+│   │   │   ├── e2a305026d23d06fae97b6cdc31a55e83e407b
+│   │   ├── 4d/
+│   │   │   ├── d887e88da1d1ff5a4555af535cdb87ca2b5019
+│   │   ├── 4e/
+│   │   │   ├── 2e2cbaa82e2efd40393c34679fc346dfcc7ad6
+│   │   ├── 4f/
+│   │   │   ├── 266bfb0df294324361e77e6c5a788fcabca5af
+│   │   │   ├── 534a3a2c877fab634cddce82641c7738166388
+│   │   ├── 5a/
+│   │   │   ├── 8fa7660f27db63cadb08b1974978f0eadecf8a
+│   │   ├── 5e/
+│   │   │   ├── 6d36ab8aac08e5754a24cf1bef969e04607fce
+│   │   ├── 5f/
+│   │   │   ├── 6a78b3fdd3c683747e40180df6b6a67cdaac7e
+│   │   ├── 63/
+│   │   │   ├── 5eb9fb41effd83e77a5147fea655e5d41f43fd
+│   │   ├── 67/
+│   │   │   ├── 5d39b15b052ba0ae89667e2c56f98218064086
+│   │   ├── 6d/
+│   │   │   ├── 258352994cc445629c30a7f68d3596a81baa94
+│   │   ├── 6f/
+│   │   │   ├── cdb887bf75d94afe86ae057b60408dfdb35701
+│   │   ├── 71/
+│   │   │   ├── 983be66a415eca8133fb493fab8d1ee2179f29
+│   │   ├── 72/
+│   │   │   ├── 41958793dc68371f9ad387247f0658a683930f
+│   │   ├── 7a/
+│   │   │   ├── 9f2288a19c1f2f7beb05ba3f457097f4868ced
+│   │   ├── 83/
+│   │   │   ├── 461fe6916259aeac6c5b960bb9ec4552677610
+│   │   ├── 8d/
+│   │   │   ├── e505d9531879e0585a240b2ea758578b18423f
+│   │   ├── 92/
+│   │   │   ├── ec7d0b79759080cc2a3fdb250ae5e1db6d267d
+│   │   ├── 93/
+│   │   │   ├── 1c8343b121bf6768d88e9a9780eb5b7723b479
+│   │   ├── 9e/
+│   │   │   ├── dcad90080219780a2ef4f2136413fc66f97d91
+│   │   ├── a2/
+│   │   │   ├── df613554a60875efed41d9c160a540e818c632
+│   │   ├── a3/
+│   │   │   ├── 57cf69c1ca152da289fc2f32b0a7b2990c2e7f
+│   │   │   ├── 7b3e6bcbeaac0ef34f6ad3f44cc2b3f8f5a03a
+│   │   ├── af/
+│   │   │   ├── f011b992d9b07e8c0555a85abeca8d2274a210
+│   │   ├── b0/
+│   │   │   ├── 65b791d1790ae16fbe02a70444fef46276f43b
+│   │   ├── b7/
+│   │   │   ├── 5a5ce7be8d12723281b988b69fc0d246cd92ae
+│   │   ├── bc/
+│   │   │   ├── edf6db0c1900b5c25aeea52e423f701107c134
+│   │   ├── bd/
+│   │   │   ├── 097e9b82c743f5f5061e91a8d4acea6fd37656
+│   │   │   ├── bf12d450a0b5b0142defe8ccb4c2cf75c250f9
+│   │   ├── c1/
+│   │   │   ├── 5755761d0fcb1aa4c24da1459d0857bea505ed
+│   │   ├── c4/
+│   │   │   ├── 1fa00bd497ed5ba0ccc24f09ff46f9c31a5eea
+│   │   ├── c5/
+│   │   │   ├── 37fca1d926e61bb988f016e1d261f8790fa510
+│   │   ├── c9/
+│   │   │   ├── 8ec5057fba80b8b140ed12e75d2833d1cd704c
+│   │   ├── cd/
+│   │   │   ├── 9d08ccad9fc37cd377d45cb0cabd8e1d0bd2fa
+│   │   ├── d2/
+│   │   │   ├── 7a4e2d63c208c37cd8e1fc7c9c07539603810a
+│   │   ├── dd/
+│   │   │   ├── 2a2da48c093f9395ec9b80406b9017b5270d98
+│   │   ├── df/
+│   │   │   ├── f3774e705e687eebc641b971f1d32aae722cdd
+│   │   ├── e2/
+│   │   │   ├── 99f39602afdd7e74555ee658019f1ecf38c51b
+│   │   ├── e4/
+│   │   │   ├── 54faa8e287ea46986375b29a5aaf05a8441fac
+│   │   ├── e5/
+│   │   │   ├── ae7fb858971f043a2e29e5cf76e36068d23b32
+│   │   ├── e6/
+│   │   │   ├── 3e0721d96872daec46232728f886ce0b8c81bf
+│   │   ├── eb/
+│   │   │   ├── 222975e9c2926292660ca0f13e0e31de531403
+│   │   ├── f0/
+│   │   │   ├── 4b507f0d0573f3a996e0a100b997cd17a1bf55
+│   │   ├── f6/
+│   │   │   ├── 72926f9fdca6e6793abafdcaa759720f9046e9
+│   │   ├── f7/
+│   │   │   ├── 1bad1d609ffb90c5559eaced818c9d8a5a9adb
+│   │   ├── fb/
+│   │   │   ├── 7e4e562209548bdc0d0ef8a4f5f37587f81079
+│   │   ├── fe/
+│   │   │   ├── 0d4566f6241da1d60ae4dc7a8c4e4d0dfe357e
+│   │   ├── info/
+│   │   │   ├── commit-graph
+│   │   │   ├── packs
+│   │   ├── pack/
+│   │   │   ├── pack-9fe8a6a0b7ac45b3689b1684205ccb34c1580a4c.idx
+│   │   │   ├── pack-9fe8a6a0b7ac45b3689b1684205ccb34c1580a4c.pack
+│   │   │   ├── pack-9fe8a6a0b7ac45b3689b1684205ccb34c1580a4c.rev
+│   ├── refs/
+│   │   ├── heads/
+│   │   │   ├── main
+│   │   ├── remotes/
+│   │   │   ├── origin/
+│   │   │   │   ├── main
+│   │   ├── tags/
+├── __pycache__/
+│   ├── rag_pipeline.cpython-310.pyc
+├── data/
+│   ├── diabetes_guidelines.txt
+│   ├── diabetes_qa.json
+│   ├── faiss_flat_index.idx
+│   ├── healthsearchqa_diabetes.json
+│   ├── meddialog_qa.json
+│   ├── LLM-CGM/
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── .git/
+│   │   │   ├── HEAD
+│   │   │   ├── config
+│   │   │   ├── description
+│   │   │   ├── index
+│   │   │   ├── packed-refs
+│   │   │   ├── branches/
+│   │   │   ├── hooks/
+│   │   │   │   ├── applypatch-msg.sample
+│   │   │   │   ├── commit-msg.sample
+│   │   │   │   ├── fsmonitor-watchman.sample
+│   │   │   │   ├── post-update.sample
+│   │   │   │   ├── pre-applypatch.sample
+│   │   │   ├── info/
+│   │   │   │   ├── exclude
+│   │   │   ├── logs/
+│   │   │   │   ├── HEAD
+│   │   │   │   ├── refs/
+│   │   │   │   │   ├── heads/
+│   │   │   │   │   │   ├── main
+│   │   │   │   │   ├── remotes/
+│   │   │   │   │   │   ├── origin/
+│   │   │   │   │   │   │   ├── HEAD
+│   │   │   ├── objects/
+│   │   │   │   ├── info/
+│   │   │   │   ├── pack/
+│   │   │   │   │   ├── pack-cfc5b3f80aa9de48ec340680a009657d23a34abe.idx
+│   │   │   │   │   ├── pack-cfc5b3f80aa9de48ec340680a009657d23a34abe.pack
+│   │   │   │   │   ├── pack-cfc5b3f80aa9de48ec340680a009657d23a34abe.rev
+│   │   │   ├── refs/
+│   │   │   │   ├── heads/
+│   │   │   │   │   ├── main
+│   │   │   │   ├── remotes/
+│   │   │   │   │   ├── origin/
+│   │   │   │   │   │   ├── HEAD
+│   │   │   │   ├── tags/
+│   │   ├── src/
+│   │   │   ├── benchmarkQandA.py
+│   │   │   ├── preprocess.py
+│   │   │   ├── __pycache__/
+│   │   │   │   ├── benchmarkQandA.cpython-310.pyc
+│   ├── MedQuAD/
+│   │   ├── LICENSE.txt
+│   │   ├── QA-TestSet-LiveQA-Med-Qrels-2479-Answers.zip
+│   │   ├── readme.txt
+│   │   ├── .git/
+│   │   │   ├── HEAD
+│   │   │   ├── config
+│   │   │   ├── description
+│   │   │   ├── index
+│   │   │   ├── packed-refs
+│   │   │   ├── branches/
+│   │   │   ├── hooks/
+│   │   │   │   ├── applypatch-msg.sample
+│   │   │   │   ├── commit-msg.sample
+│   │   │   │   ├── fsmonitor-watchman.sample
+│   │   │   │   ├── post-update.sample
+│   │   │   │   ├── pre-applypatch.sample
+│   │   │   ├── info/
+│   │   │   │   ├── exclude
+│   │   │   ├── logs/
+│   │   │   │   ├── HEAD
+│   │   │   │   ├── refs/
+│   │   │   │   │   ├── heads/
+│   │   │   │   │   │   ├── master
+│   │   │   │   │   ├── remotes/
+│   │   │   │   │   │   ├── origin/
+│   │   │   │   │   │   │   ├── HEAD
+│   │   │   ├── objects/
+│   │   │   │   ├── info/
+│   │   │   │   ├── pack/
+│   │   │   │   │   ├── pack-bb848c22319f39344658c073a3fde39d4ed53f6e.idx
+│   │   │   │   │   ├── pack-bb848c22319f39344658c073a3fde39d4ed53f6e.pack
+│   │   │   │   │   ├── pack-bb848c22319f39344658c073a3fde39d4ed53f6e.rev
+│   │   │   ├── refs/
+│   │   │   │   ├── heads/
+│   │   │   │   │   ├── master
+│   │   │   │   ├── remotes/
+│   │   │   │   │   ├── origin/
+│   │   │   │   │   │   ├── HEAD
+│   │   │   │   ├── tags/
+│   │   ├── 10_MPlus_ADAM_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 11_MPlusDrugs_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 12_MPlusHerbsSupplements_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 1_CancerGov_QA/
+│   │   │   ├── 0000001_1.xml
+│   │   │   ├── 0000001_2.xml
+│   │   │   ├── 0000001_3.xml
+│   │   │   ├── 0000001_4.xml
+│   │   │   ├── 0000001_5.xml
+│   │   ├── 2_GARD_QA/
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000006.xml
+│   │   │   ├── 0000010.xml
+│   │   │   ├── 0000011.xml
+│   │   │   ├── 0000012.xml
+│   │   ├── 3_GHR_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 4_MPlus_Health_Topics_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 5_NIDDK_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 6_NINDS_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 7_SeniorHealth_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 8_NHLBI_QA_XML/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000002.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000004.xml
+│   │   │   ├── 0000005.xml
+│   │   ├── 9_CDC_QA/
+│   │   │   ├── 0000001.xml
+│   │   │   ├── 0000003.xml
+│   │   │   ├── 0000008.xml
+│   │   │   ├── 0000014.xml
+│   │   │   ├── 0000015.xml
+│   ├── ReMeDi/
+│   │   ├── ReMeDi-base.json
+│   ├── __pycache__/
+│   │   ├── sections.cpython-310.pyc
+│   ├── final/
+│   │   ├── diabetes_lora.json
+│   ├── prepared/
+│   │   ├── llm_cgm_questions.json
+│   │   ├── medquad_diabetes.json
+│   │   ├── remedi_diabetes.json
+├── embeddings/
+│   ├── chunked_embeddings_0.json
+│   ├── chunked_embeddings_1.json
+│   ├── chunked_embeddings_2.json
+│   ├── chunked_embeddings_3.json
+│   ├── chunked_embeddings_4.json
+├── eval/
+│   ├── evaluate.py
+├── evaluation/
+│   ├── __init__.py
+│   ├── eval_rag_on_dataset.py
+│   ├── metrics_eval.py
+│   ├── test_eval.py
+│   ├── __pycache__/
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── evaluate.cpython-310.pyc
+│   │   ├── metrics_eval.cpython-310.pyc
+│   │   ├── test_eval.cpython-310.pyc
+├── faiss_index/
+│   ├── embeddings.npy
+│   ├── texts.pkl
+├── faiss_index_final/
+│   ├── index
+│   ├── texts.pkl
+├── logs/
+│   ├── evaluation_log.txt
+│   ├── rag_chatbot_20250503_103829.log
+│   ├── rag_chatbot_20250503_104233.log
+│   ├── rag_chatbot_20250503_104946.log
+│   ├── rag_chatbot_20250503_105245.log
+├── lora-bloomz-diabetes/
+│   ├── README.md
+│   ├── adapter_config.json
+│   ├── adapter_model.safetensors
+│   ├── special_tokens_map.json
+│   ├── tokenizer.json
+├── lora-bloomz1b7-diabetes/
+│   ├── checkpoint-681/
+│   │   ├── README.md
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── rng_state.pth
+├── models/
+│   ├── bloomz_interface.py
+│   ├── prompts.py
+├── numpy_vectordb/
+│   ├── embeddings.npy
+│   ├── texts.pkl
+├── offload/
+├── preparation/
+│   ├── filter_diabetes_qa.py
+│   ├── prepare_med_dialog.py
+│   ├── prepare_med_dialog2.py
+│   ├── prepare_medquad.py
+├── rag/
+│   ├── rag_pipeline.py
+├── retrieval/
+│   ├── build_index.py
+│   ├── embedder.py
+│   ├── faiss_flat_index.idx
+│   ├── faiss_index.pkl
+│   ├── passage_map.pkl
+│   ├── __pycache__/
+│   │   ├── search.cpython-310.pyc
+├── scripts/
+│   ├── __init__.py
+│   ├── api_server.py
+│   ├── app.py
+│   ├── bloom-1b7_download.py
+│   ├── build_faiss_from_saved.py
+│   ├── __pycache__/
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── rag_chatbot.cpython-310.pyc
+│   │   ├── simple_vector_search.cpython-310.pyc
+│   ├── logs/
+│   │   ├── rag_chatbot_20250504_092334.log
+├── ui/
+│   ├── simple_demo.py
+├── utils/
+│   ├── translator.py
+│   ├── __pycache__/
+│   │   ├── translator.cpython-310.pyc
+├── vectordb/
+│   ├── loader.py
+│   ├── main.py
+│   ├── run_batches.sh
+│   ├── __pycache__/
+│   │   ├── loader.cpython-310.pyc

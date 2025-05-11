@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # scripts/rag_chatbot.py
 
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFacePipeline
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.llms import HuggingFacePipeline
 from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM, BitsAndBytesConfig
-from simple_vector_search import SimpleVectorDB
+from scripts.simple_vector_search import SimpleVectorDB
+from utils.patient_profiles import get_patient_profile
 import torch
 import logging
 import time
@@ -12,7 +14,6 @@ import psutil
 from peft import PeftModel
 from datetime import datetime
 import sys
-import re
 
 # --- Logging Setup ---
 log_dir = "logs"
@@ -200,53 +201,58 @@ def load_llm():
 
 # --- Custom Retriever ---
 def custom_retriever(vectordb, query):
-    """
-    Retrieve up to k docs, but fall back gracefully if scores are low.
-    """
+    """Enhanced custom retriever with better relevance filtering."""
     logger.info(f"Processing query: '{query}'")
+    start_time = time.time()
 
-    # Pull a few more candidates for safety
-    results = vectordb.similarity_search(query, k=10)
+    # Try with a larger k to get more potential matches
+    results = vectordb.similarity_search(query, k=8)
+    
+    # Add scores to log for diagnostic purposes
+    score_log = [f"{i+1}: {r.get('score', 0):.4f}" for i, r in enumerate(results[:5])] if results else []
+    if score_log:
+        logger.info(f"Top retrieval scores: {', '.join(score_log)}")
+    
+    # Apply stricter filtering
+    filtered_results = filter_docs_by_score(results, min_score=0.60)
 
-    # Log the top‑5 scores for debugging
-    if results:
-        logger.info(
-            "Top retrieval scores: " +
-            ", ".join(f"{i+1}:{r.get('score', 0):.4f}" for i, r in enumerate(results[:5]))
-        )
+    end_time = time.time()
+    retrieval_time = end_time - start_time
+    logger.info(f"Retrieved {len(results)} raw docs, {len(filtered_results)} after filtering in {retrieval_time:.4f} seconds")
 
-    # Keep anything above 0.40 … but never return <2 docs.
-    filtered = [r for r in results if r.get("score", 0) >= 0.40] or results[:2]
-
-    # Extract text
-    docs = []
-    for r in filtered:
-        if isinstance(r, dict) and "text" in r:
-            docs.append(r["text"])
-        elif hasattr(r, "page_content"):
-            docs.append(r.page_content)
-        elif hasattr(r, "text"):
-            docs.append(r.text)
+    # Extract text from filtered results
+    if filtered_results:
+        if isinstance(filtered_results[0], dict) and 'text' in filtered_results[0]:
+            return [r['text'] for r in filtered_results]
+        elif hasattr(filtered_results[0], "page_content"):
+            return [r.page_content for r in filtered_results]
+        elif hasattr(filtered_results[0], "text"):
+            return [r.text for r in filtered_results]
         else:
-            docs.append(str(r))
-
-    return docs
-
-def post_process_response(raw: str) -> str:
-    """
-    • Strips prompt leakage / instruction echoes
-    • Removes unfinished trailing sentence
-    """
-    #  1 Remove any lines that start with '•', '-', or numerals followed by guidelines
-    cleaned = re.sub(r"^[\-\d\•].*guidelines?:.*$", "", raw, flags=re.IGNORECASE | re.MULTILINE)
-
-    #  2 Kill everything after an obviously truncated word at the very end
-    sentences = re.split(r"(?<=[\.\!\?])\s+", cleaned.strip())
-    if sentences and not sentences[-1][-1] in ".!?":
-        sentences = sentences[:-1]
-
-    return " ".join(sentences).strip()
-
+            return [str(r) for r in filtered_results]
+    
+    # Add fallback information for common diabetes topics
+    # This ensures there's always some relevant context
+    medical_facts = {
+        "a1c": "A1C (glycated hemoglobin) is a blood test that measures your average blood sugar levels over the past 2-3 months. For most adults with diabetes, the target A1C is less than 7%. The test works by measuring the percentage of hemoglobin proteins in your blood that are coated with sugar (glycated). The higher your A1C level, the higher your risk of diabetes complications.",
+        "foot": "Diabetes can cause nerve damage (neuropathy) and poor circulation in your feet. This can lead to numbness, tingling, pain, and wounds that heal slowly. It's important to check your feet daily for cuts, blisters, redness, or swelling. If you notice any foot problems, contact your healthcare provider promptly.",
+        "diet": "A healthy diet for diabetes focuses on controlling carbohydrate intake, choosing high-fiber foods, limiting refined carbs and sugars, and emphasizing vegetables, whole grains, lean proteins, and healthy fats. Portion control is also important.",
+        "exercise": "Regular physical activity helps control blood sugar levels by improving your body's insulin sensitivity. Aim for 150 minutes of moderate-intensity exercise per week. Always consult your healthcare provider before starting a new exercise program."
+    }
+    
+    # Determine if we should add fallback information
+    query_lower = query.lower()
+    additional_context = []
+    
+    for key, info in medical_facts.items():
+        if key in query_lower:
+            additional_context.append(f"MEDICAL FACT: {info}")
+    
+    if additional_context:
+        logger.info(f"Adding {len(additional_context)} fallback medical facts to context")
+        return additional_context
+    
+    return []
 
 # --- Conversational Bot ---
 def run_chatbot():
@@ -321,21 +327,35 @@ def run_chatbot():
             retrieval_time = retrieval_end - retrieval_start
             session_stats["total_retrieval_time"] += retrieval_time
             
-           # --- Build prompt ----------------------------------------------------
-            language_hint = "ES" if re.search(r"\b(el|la|los|las|qué|cómo|para|dónde|por)\b",
-                                            user_query.lower()) else "EN"
+            context = "\n".join(retrieved_docs)
+            prompt = f"""
+You are a medically accurate assistant for people with diabetes. Always prioritize factual, evidence-based information.
+profile = get_patient_profile(user_id.lower())
+Patient Profile:
+- Name: {profile["name"]}
+- Age: {profile["age"]}
+- Diagnoses: {', '.join(profile["diagnoses"])}
+- Medications: {', '.join(profile["medications"])} (Adherence: {profile["adherence"]})
+- Cultural Beliefs: {profile["culture"]}
+- Social Background: {profile["social"]}
 
-            prompt = f"""You are a medically‑accurate diabetes assistant.
-            Respond in the same language as the question ({'Spanish' if language_hint=='ES' else 'English'}).
+Medical Question: {input_translated}
 
-            PATIENT CONDITIONS: {patient_context['conditions']}
-            RETRIEVED INFO:
-            {context}
 
-            QUESTION: {user_query}
+Follow these guidelines:
+1. If the retrieved information seems incorrect or contradictory, rely on established medical facts
+2. If you're unsure about something, be honest about limitations rather than providing potentially incorrect advice
+3. For questions about medical conditions, recommend consulting a healthcare provider when appropriate
+4. Provide complete, coherent answers without trailing off mid-explanation
+5. When addressing nutrition, focus on foods that help maintain steady blood sugar levels
 
-            ANSWER:"""
+Use the context below to answer their question. If the context doesn't contain relevant information, rely on general diabetes knowledge.
 
+Context:
+{context}
+
+Question: {user_query}
+Answer:"""
 
             # Log prompt length
             logger.info(f"Prompt length: {len(prompt)} characters")
@@ -343,9 +363,6 @@ def run_chatbot():
             # Time the LLM processing
             llm_start = time.time()
             result = llm(prompt)
-            answer = post_process_response(result)
-
-            print(f"\n🤖 Assistant: {answer}\n")
             llm_end = time.time()
             llm_time = llm_end - llm_start
             session_stats["total_llm_time"] += llm_time
@@ -353,7 +370,7 @@ def run_chatbot():
             logger.info(f"Generated response in {llm_time:.4f} seconds")
             logger.info(f"Response length: {len(result)} characters")
             
-            
+            print("\nBot:", result.strip())
             
             # Log performance metrics
             logger.info(f"Query performance - Retrieval: {retrieval_time:.4f}s, LLM: {llm_time:.4f}s, Total: {retrieval_time + llm_time:.4f}s")
@@ -364,8 +381,6 @@ def run_chatbot():
         except Exception as e:
             logger.error(f"Error processing query: {str(e)}")
             print("Sorry, I encountered an error. Please try again.")
-
-
 
 if __name__ == "__main__":
     try:

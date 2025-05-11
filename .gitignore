@@ -10,4 +10,4 @@ models/
 logs/
 *.ipynb_checkpoints/
 *.zip
-*.tar.gz
+*.tar.gzlora-bloomz-diabetes/\nvectordb/\nmodels/\ncheckpoints/\nlogs/*.pt
