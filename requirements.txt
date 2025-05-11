@@ -25,6 +25,8 @@ faiss-cpu  # Use faiss-gpu if using GPU-based search
 # faiss-gpu
 
 # Language support
+
+langchain
 langdetect
 googletrans==4.0.0-rc1
 # or transformers MarianMT for translation (already included)
