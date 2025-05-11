@@ -125,13 +125,124 @@ python scripts/evaluate_finetuned_lora.py
 cd vectordb
 bash run_batches.sh
 ```
+# 🚀 Deployment Guide for Multilingual Diabetes Chatbot
 
-## 📈 Future Plans
+This guide helps you deploy the full chatbot app via **Streamlit Cloud** or **Render.com**.
 
-- [ ] Scale up to `bloomz-1b1` or `3b` for better performance
-- [ ] Add **few-shot examples** or better system prompts
-- [ ] Integrate **RAG pipeline end-to-end** for real-time doc retrieval + generation
-- [ ] Deploy chatbot via **Gradio/Streamlit**
+---
+
+## 🌐 Deployment Options
+
+### ✅ Streamlit Cloud (Recommended for demo/testing)
+
+1. **Push to GitHub**
+   Make sure your repo includes:
+   - `full_chatbot_app.py`
+   - `requirements.txt`
+   - `Procfile`
+   - `utils/`, `scripts/`, `data/` (but NO large LoRA or model files)
+
+2. **Remove Large Files Before Commit**
+   ```bash
+   rm -rf lora-bloomz-diabetes/ models/ checkpoints/ vectordb/
+   echo "lora-bloomz-diabetes/\nmodels/\ncheckpoints/\nvectordb/" >> .gitignore
+   ```
+
+3. **Create GitHub Repo**
+   ```bash
+   git init
+   git remote add origin https://github.com/yourusername/diabetes-chatbot
+   git add .
+   git commit -m "Initial deployable version"
+   git push -u origin main
+   ```
+
+4. **Deploy on Streamlit Cloud**
+   - Visit [streamlit.io/cloud](https://streamlit.io/cloud)
+   - Click **New App** → Select your repo
+   - Set `full_chatbot_app.py` as the entry file
+   - Click **Deploy** 🎉
+
+---
+
+### ✅ Render.com (For flexible web deployment)
+
+1. **Same GitHub Setup as above**
+2. **Add the following files (already included):**
+   - `requirements.txt`
+   - `Procfile`
+
+3. **Render Setup**
+   - Go to [https://render.com](https://render.com)
+   - Click "New Web Service"
+   - Connect your GitHub
+   - Choose:
+     - **Build Command**: `pip install -r requirements.txt`
+     - **Start Command**: `streamlit run full_chatbot_app.py --server.port=$PORT`
+     - **Environment**: Python 3.10+
+
+---
+
+## 📦 Deployment File Summary
+
+### `requirements.txt`
+```text
+streamlit==1.32.2
+torch>=2.0
+transformers
+sentencepiece
+langchain>=0.1.0
+langchain-community
+bert-score
+gtts
+SpeechRecognition
+soundfile
+matplotlib
+pandas
+tqdm
+scikit-learn
+huggingface_hub
+openpyxl
+python-dotenv
+```
+
+### `Procfile`
+```bash
+web: streamlit run full_chatbot_app.py --server.port=$PORT
+```
+
+---
+
+## 📁 Folder Structure for Deployment (Minimal)
+```
+CSE635-project/
+├── full_chatbot_app.py
+├── requirements.txt
+├── Procfile
+├── utils/
+│   ├── patient_profiles.py
+│   └── translator.py
+├── scripts/
+│   └── rag_chatbot.py
+├── data/
+│   └── alignment_dataset.json
+├── logs/              # (optional, gitignore it)
+│   └── chat_history.db
+└── README.md
+```
+
+> ⚠️ Exclude large model weights (`lora-bloomz-diabetes/`, `vectordb/`) from GitHub to meet cloud limits.
+
+---
+
+## ✅ Next Steps
+- Test your app at: `https://your-app-name.streamlit.app`
+- Share the public link with evaluators/instructors
+- Continue training locally and push lighter endpoints for inference
+
+---
+
+Need help with Hugging Face Spaces or Docker deployment? Let us know!
 
 ## ✨ Contributors
 

@@ -330,7 +330,7 @@ def run_chatbot():
             context = "\n".join(retrieved_docs)
             prompt = f"""
 You are a medically accurate assistant for people with diabetes. Always prioritize factual, evidence-based information.
-profile = get_patient_profile(user_id.lower())
+
 Patient Profile:
 - Name: {profile["name"]}
 - Age: {profile["age"]}

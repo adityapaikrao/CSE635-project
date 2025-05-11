@@ -12,23 +12,51 @@ numpy
 uuid
 
 # Deep learning core
-torch
+torch>=2.0
 transformers
 datasets
 accelerate
 peft
 evaluate
 bitsandbytes
+sentencepiece  # Required for some Transformer models
 
 # Optional vector DB integration
 faiss-cpu  # Use faiss-gpu if using GPU-based search
-# faiss-gpu
 
 # Language support
 langdetect
 googletrans==4.0.0-rc1
-# or transformers MarianMT for translation (already included)
+# Or use transformers MarianMT (already included via `transformers`)
 
-# Misc
+# Streamlit UI
+streamlit==1.32.2
+
+# LLM and chatbot tools
+langchain>=0.1.0
+langchain-community
+
+# Speech and audio
+gtts
+SpeechRecognition
+soundfile
+
+# Visualization & utilities
+matplotlib
+pandas
 tqdm
-python-dotenv  # optional if using env config
+python-dotenv  # Optional, for env config
+
+# For optional HF inference API or local hosting
+huggingface_hub
+
+# Evaluation metrics
+bert-score
+
+⚙️ Procfile
+For platforms like Render, Railway, or Heroku. It runs:
+
+bash
+Copy
+Edit
+streamlit run full_chatbot_app.py --server.port=$PORT
