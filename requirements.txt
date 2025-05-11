@@ -26,6 +26,7 @@ faiss-cpu  # Use faiss-gpu if using GPU-based search
 
 # Language support
 
+pydantic==1.10.15
 langchain
 langdetect
 googletrans==4.0.0-rc1
