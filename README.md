@@ -4,7 +4,7 @@
 
 ![Project Banner](https://img.shields.io/badge/Medical-Chatbot-blue) ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow) ![Language](https://img.shields.io/badge/Multilingual-Support-green)
 
-> An intelligent multilingual health chatbot to assist users with **diabetes-related medical queries**, using **Retrieval-Augmented Generation (RAG)** and **LoRA fine-tuning on BLOOMZ**.
+> An intelligent multilingual health chatbot to assist users with **diabetes-related medical queries**, using **Retrieval-Augmented Generation (RAG)** and **LoRA fine-tuning on BLOOMZ**. The app is published on Streamlit Community Cloud and cab be accessed [here](https://cse635-project-6f4gyvgolcucb943cbwssl.streamlit.app/)
 
 ## 📚 Problem Statement
 

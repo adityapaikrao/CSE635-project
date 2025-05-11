@@ -15,48 +15,34 @@ uuid
 torch>=2.0
 transformers
 datasets
-accelerate
+accelerate==1.6.0
 peft
 evaluate
-bitsandbytes
-sentencepiece  # Required for some Transformer models
+bitsandbytes==0.45.5
+bert-score==0.3.13
 
 # Optional vector DB integration
 faiss-cpu  # Use faiss-gpu if using GPU-based search
+# faiss-gpu
 
 # Language support
 langdetect
 googletrans==4.0.0-rc1
-# Or use transformers MarianMT (already included via `transformers`)
 
-# Streamlit UI
-streamlit==1.32.2
+# Additional dependencies
+absl-py==2.2.2
+aiohappyeyeballs==2.6.1
+aiohttp==3.11.18
+aiosignal==1.3.2
+altair==5.0
+annotated-types==0.7.0
+anyio==4.9.0
+async-timeout==4.0.3
+attrs==25.3.0
+blinker==1.9.0
+cachetools==5.5.2
+certifi==2025.4.26
 
-# LLM and chatbot tools
-langchain>=0.1.0
-langchain-community
-
-# Speech and audio
-gtts
-SpeechRecognition
-soundfile
-
-# Visualization & utilities
-matplotlib
-pandas
+# Misc utilities
 tqdm
-python-dotenv  # Optional, for env config
-
-# For optional HF inference API or local hosting
-huggingface_hub
-
-# Evaluation metrics
-bert-score
-
-⚙️ Procfile
-For platforms like Render, Railway, or Heroku. It runs:
-
-bash
-Copy
-Edit
-streamlit run full_chatbot_app.py --server.port=$PORT
+python-dotenv  # optional if using env config
