@@ -5,7 +5,7 @@ trafilatura
 spacy
 
 # Vector store and chunking
-qdrant-client
+# qdrant-client
 sentence-transformers
 scikit-learn
 numpy
